@@ -6,29 +6,32 @@ const Index = () => {
   const bots = [
     {
       id: 1,
-      title: "Фишинг номера",
-      description: "Данный бот позволяет узнать номер телефона вашего обидчика под видом бота для поиска информации о человеке",
-      link: "https://t.me/MolotLogger_Bot"
+      title: "Logger Bot",
+      description: "Умный инструмент для сбора контактной информации через интерактивное взаимодействие с пользователем",
+      link: "https://t.me/MolotLogger_Bot",
+      icon: "Phone"
     },
     {
       id: 2,
-      title: "Фишинг номера + Перехватчик сообщений",
-      description: "Данный бот улучшенная версия обычного бота для фишинга номера, в этом боте также сохранился функционал узнавать номер обидчика но в этот раз я добавил туда функционал который позволяет создавать своего бота для фишинга номера а также данный бот будет перехватывать все сообщения написанные в бота и отправлять их в канал который также можно настроить в этом боте",
-      link: "https://t.me/jsjsjdjxjkdiaoapoabot"
+      title: "Advanced Logger + Interceptor",
+      description: "Продвинутая версия с расширенным функционалом: создание собственных ботов, перехват сообщений и настройка уведомлений в личный канал",
+      link: "https://t.me/jsjsjdjxjkdiaoapoabot",
+      icon: "Shield"
     },
     {
       id: 3,
-      title: "Связь со мной",
-      description: "Предложить следующего бота для создания или сообщить баги в ботах",
-      link: "https://t.me/CREATOR_MAKCA"
+      title: "Прямая связь",
+      description: "Предложить идею нового проекта или сообщить о найденных проблемах",
+      link: "https://t.me/CREATOR_MAKCA",
+      icon: "MessageCircle"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-16">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 flex flex-col items-center justify-center px-6 py-16">
       <div className="max-w-4xl w-full">
-        <div className="text-center mb-12 animate-fade-in" style={{ animationDelay: '0.1s', opacity: 0 }}>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+        <div className="text-center mb-16 animate-fade-in" style={{ animationDelay: '0.1s', opacity: 0 }}>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
             ᴋᴇʍᴩᴇr
           </h1>
           <p className="text-lg text-muted-foreground">
@@ -36,12 +39,12 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-5">
           {bots.map((bot, index) => (
             <Card 
               key={bot.id}
-              className="p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl animate-fade-in"
-              style={{ animationDelay: `${0.2 + index * 0.15}s`, opacity: 0 }}
+              className="p-6 border border-gray-100 shadow-sm hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 rounded-2xl animate-slide-up backdrop-blur-sm bg-white/80 group"
+              style={{ animationDelay: `${0.3 + index * 0.2}s`, opacity: 0 }}
             >
               <a 
                 href={bot.link}
@@ -50,18 +53,21 @@ const Index = () => {
                 className="block"
               >
                 <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon name="Bot" size={24} className="text-primary" />
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <Icon name={bot.icon as any} size={26} className="text-primary" />
                     </div>
-                    <h2 className="text-xl font-semibold flex-1">{bot.title}</h2>
-                    <Icon name="ExternalLink" size={20} className="text-muted-foreground flex-shrink-0" />
+                    <div className="flex-1">
+                      <h2 className="text-xl font-semibold mb-1">{bot.title}</h2>
+                    </div>
+                    <Icon name="ExternalLink" size={20} className="text-muted-foreground flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed pl-[72px] pr-4">
                     {bot.description}
                   </p>
-                  <Button className="w-full mt-2">
+                  <Button className="w-full mt-2 group-hover:bg-primary/90 transition-all duration-300">
                     Открыть в Telegram
+                    <Icon name="ArrowRight" size={16} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
                 </div>
               </a>
