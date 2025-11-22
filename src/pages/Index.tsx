@@ -27,7 +27,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-16">
       <div className="max-w-4xl w-full">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in" style={{ animationDelay: '0.1s', opacity: 0 }}>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
             Приветствую на моем личном сайте
           </h1>
@@ -37,10 +37,11 @@ const Index = () => {
         </div>
 
         <div className="space-y-6">
-          {bots.map((bot) => (
+          {bots.map((bot, index) => (
             <Card 
               key={bot.id}
-              className="p-8 border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl"
+              className="p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl animate-fade-in"
+              style={{ animationDelay: `${0.2 + index * 0.15}s`, opacity: 0 }}
             >
               <a 
                 href={bot.link}
@@ -48,19 +49,21 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="block"
               >
-                <Button 
-                  className="w-full h-auto py-4 px-6 text-left flex flex-col items-start gap-3 rounded-xl"
-                  size="lg"
-                >
-                  <div className="flex items-center gap-3 w-full">
-                    <Icon name="Bot" size={24} />
-                    <span className="text-xl font-semibold">{bot.title}</span>
-                    <Icon name="ExternalLink" size={20} className="ml-auto" />
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon name="Bot" size={24} className="text-primary" />
+                    </div>
+                    <h2 className="text-xl font-semibold flex-1">{bot.title}</h2>
+                    <Icon name="ExternalLink" size={20} className="text-muted-foreground flex-shrink-0" />
                   </div>
-                  <p className="text-sm font-normal text-primary-foreground/90 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {bot.description}
                   </p>
-                </Button>
+                  <Button className="w-full mt-2">
+                    Открыть в Telegram
+                  </Button>
+                </div>
               </a>
             </Card>
           ))}
