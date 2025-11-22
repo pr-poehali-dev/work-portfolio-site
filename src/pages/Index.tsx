@@ -30,13 +30,25 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 flex flex-col items-center justify-center px-6 py-16">
       <div className="max-w-4xl w-full">
-        <div className="text-center mb-16 animate-fade-in" style={{ animationDelay: '0.1s', opacity: 0 }}>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-            ᴋᴇʍᴩᴇr
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Разработчик на Python, Lua.
-          </p>
+        <div className="text-center mb-16">
+          <div className="mb-8 flex justify-center animate-scale-fade" style={{ animationDelay: '0s', opacity: 0 }}>
+            <div className="w-32 h-32 rounded-full overflow-hidden shadow-xl ring-4 ring-primary/10">
+              <img 
+                src="/placeholder.svg" 
+                alt="Аватар ᴋᴇʍᴩᴇr" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          
+          <div className="animate-fade-in" style={{ animationDelay: '0.3s', opacity: 0 }}>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+              ᴋᴇʍᴩᴇr
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Разработчик на Python, Lua.
+            </p>
+          </div>
         </div>
 
         <div className="space-y-5">
@@ -44,7 +56,7 @@ const Index = () => {
             <Card 
               key={bot.id}
               className="p-6 border border-gray-100 shadow-sm hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 rounded-2xl animate-slide-up backdrop-blur-sm bg-white/80 group"
-              style={{ animationDelay: `${0.3 + index * 0.2}s`, opacity: 0 }}
+              style={{ animationDelay: `${0.6 + index * 0.25}s`, opacity: 0 }}
             >
               <a 
                 href={bot.link}
