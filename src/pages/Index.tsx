@@ -29,10 +29,10 @@ const Index = () => {
       <div className="max-w-4xl w-full">
         <div className="text-center mb-12 animate-fade-in" style={{ animationDelay: '0.1s', opacity: 0 }}>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
-            Приветствую на моем личном сайте
+            ᴋᴇʍᴩᴇr
           </h1>
           <p className="text-lg text-muted-foreground">
-            На сайте находятся мои работы а также мой личный профиль в telegram
+            Разработчик на Python, Lua.
           </p>
         </div>
 
