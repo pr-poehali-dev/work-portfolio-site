@@ -31,17 +31,13 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 flex flex-col items-center justify-center px-6 py-16">
       <div className="max-w-4xl w-full">
         <div className="text-center mb-16">
-          <div className="mb-8 flex justify-center animate-scale-fade" style={{ animationDelay: '0s', opacity: 0 }}>
-            <div className="w-32 h-32 rounded-full overflow-hidden shadow-xl ring-4 ring-primary/10">
-              <img 
-                src="/placeholder.svg" 
-                alt="Аватар ᴋᴇʍᴩᴇr" 
-                className="w-full h-full object-cover"
-              />
+          <div className="mb-8 flex justify-center">
+            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-primary/70 shadow-xl ring-4 ring-primary/10 flex items-center justify-center">
+              <Icon name="Code2" size={64} className="text-white" />
             </div>
           </div>
           
-          <div className="animate-fade-in" style={{ animationDelay: '0.3s', opacity: 0 }}>
+          <div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
               ᴋᴇʍᴩᴇr
             </h1>
@@ -52,11 +48,10 @@ const Index = () => {
         </div>
 
         <div className="space-y-5">
-          {bots.map((bot, index) => (
+          {bots.map((bot) => (
             <Card 
               key={bot.id}
-              className="p-6 border border-gray-100 shadow-sm hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 rounded-2xl animate-slide-up backdrop-blur-sm bg-white/80 group"
-              style={{ animationDelay: `${0.8 + index * 0.35}s`, opacity: 0 }}
+              className="p-6 border border-gray-100 shadow-sm hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 rounded-2xl backdrop-blur-sm bg-white/80 group"
             >
               <a 
                 href={bot.link}
