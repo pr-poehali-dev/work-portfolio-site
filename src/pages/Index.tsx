@@ -56,7 +56,7 @@ const Index = () => {
             <Card 
               key={bot.id}
               className="p-6 border border-gray-100 shadow-sm hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 rounded-2xl animate-slide-up backdrop-blur-sm bg-white/80 group"
-              style={{ animationDelay: `${0.6 + index * 0.25}s`, opacity: 0 }}
+              style={{ animationDelay: `${0.8 + index * 0.35}s`, opacity: 0 }}
             >
               <a 
                 href={bot.link}
